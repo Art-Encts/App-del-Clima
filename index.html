@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App del Clima</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+    <header>
+        <img src="img/banner.png" alt="Banner de la App del Clima" class="banner">
+        <h1>App del Clima</h1>
+        <p>Consulta el clima en tiempo real de cualquier ciudad</p>
+    </header>
+
+    <main>
+        <form id="formu" class="formulario">
+            <input type="text" id="caja" placeholder="Escribe una ciudad..." class="entrada">
+            <button type="submit" class="boton">Consultar</button>
+        </form>
+
+        <p id="texto" class="mensaje"></p>
+
+        <div id="cajaResultado" class="resultado">
+            <h2 id="nombreCiudad"></h2>
+            <p id="temperatura"></p>
+            <p id="descripcion"></p}
+            <p id="sensacion"></p>
+            <p id="humedad"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - App del Clima | Datos de OpenWeatherMap</p>
+    </footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

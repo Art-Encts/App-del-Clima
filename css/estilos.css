@@ -1,0 +1,151 @@
+/* ==========================================
+   ESTILOS - APP DEL CLIMA
+   ========================================== */
+
+/* Estilos generales de la página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+    transition: background 0.5s ease;
+}
+
+body.soleado {
+    background: linear-gradient(135deg, #f12711, #f5af19);
+}
+
+body.nublado {
+    background: linear-gradient(135deg, #606c88, #3f4c6b);
+}
+
+body.lluvioso {
+    background: linear-gradient(135deg, #0f2027, #2c5364);
+}
+
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilos del encabezado */
+header {
+    margin-bottom: 30px;
+}
+
+.banner {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Estilos del formulario */
+.formulario {
+    margin-bottom: 20px;
+}
+
+.entrada {
+    padding: 12px 15px;
+    width: 280px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.boton {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #1e3c72;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+}
+
+.boton:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos del mensaje */
+.mensaje {
+    margin: 15px 0;
+    font-style: italic;
+    min-height: 24px;
+}
+
+/* Estilos de la caja de resultados */
+.resultado {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    border-radius: 10px;
+    display: none;
+    animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.resultado h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.resultado p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+}
+
+#temperatura {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Estilos del pie de página */
+footer {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 500px) {
+    .entrada {
+        width: 100%;
+    }
+    .boton {
+        margin-left: 0;
+        width: 100%;
+    }
+}
