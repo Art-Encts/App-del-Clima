@@ -1,8 +1,8 @@
 /* ==========================================
-   ESTILOS - APP DEL CLIMA
+   ESTILOS - APP DEL CLIMA - PARTE 9
+   TODOS LOS RETOS INCLUIDOS
    ========================================== */
 
-/* Estilos generales de la página */
 * {
     margin: 0;
     padding: 0;
@@ -16,9 +16,33 @@ body {
     min-height: 100vh;
     padding: 20px;
     text-align: center;
-    transition: background 0.5s ease;
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
+/* Tema Claro - RETO 4 */
+body.claro {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333333;
+}
+
+body.claro .resultado,
+body.claro .detalles p,
+body.claro .historial-boton {
+    background: rgba(0, 0, 0, 0.05);
+    color: #333333;
+}
+
+body.claro .boton-secundario {
+    border-color: #333333;
+    color: #333333;
+}
+
+body.claro .boton-tema {
+    background: #333333;
+    color: #ffffff;
+}
+
+/* Fondos segun clima */
 body.soleado {
     background: linear-gradient(135deg, #f12711, #f5af19);
 }
@@ -31,14 +55,19 @@ body.lluvioso {
     background: linear-gradient(135deg, #0f2027, #2c5364);
 }
 
+body.noche {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+}
+
 .contenedor {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-/* Estilos del encabezado */
+/* Encabezado */
 header {
     margin-bottom: 30px;
+    position: relative;
 }
 
 .banner {
@@ -50,39 +79,40 @@ header {
 }
 
 h1 {
-    font-size: 2.2rem;
+    font-size: 3rem;
     margin-bottom: 10px;
 }
 
 header p {
-    font-size: 1rem;
+    font-size: 1.3rem;
     opacity: 0.8;
+    margin-bottom: 15px;
 }
 
-/* Estilos del formulario */
+/* Formulario */
 .formulario {
     margin-bottom: 20px;
 }
 
 .entrada {
-    padding: 12px 15px;
-    width: 280px;
+    padding: 16px 20px;
+    width: 350px;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
 }
 
 .boton {
-    padding: 12px 25px;
+    padding: 16px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     background: #ffffff;
     color: #1e3c72;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    margin-left: 8px;
+    margin: 5px;
     transition: transform 0.2s ease;
 }
 
@@ -90,62 +120,180 @@ header p {
     transform: scale(1.05);
 }
 
-/* Estilos del mensaje */
-.mensaje {
-    margin: 15px 0;
-    font-style: italic;
-    min-height: 24px;
+/* Botones secundarios */
+.boton-secundario {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
 }
 
-/* Estilos de la caja de resultados */
+.boton-ubicacion {
+    background: #4CAF50;
+    color: #ffffff;
+}
+
+.boton-tema {
+    background: #ff9800;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.boton-compartir {
+    background: #25D366;
+    color: #ffffff;
+    margin-top: 15px;
+}
+
+/* Historial - RETO 3 */
+.historial {
+    margin: 15px 0;
+}
+
+.historial-titulo {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+.historial-boton {
+    padding: 8px 15px;
+    margin: 4px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+/* Mensaje */
+.mensaje {
+    margin: 20px 0;
+    font-style: italic;
+    font-size: 1.2rem;
+    min-height: 30px;
+}
+
+/* Resultados */
 .resultado {
     background: rgba(255, 255, 255, 0.15);
-    padding: 25px;
-    border-radius: 10px;
+    padding: 35px;
+    border-radius: 12px;
     display: none;
     animation: aparecer 0.5s ease;
 }
 
 @keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .resultado h2 {
-    font-size: 1.8rem;
+    font-size: 3rem;
     margin-bottom: 15px;
 }
 
-.resultado p {
-    font-size: 1.1rem;
-    margin: 8px 0;
+.temperatura-grande {
+    margin: 25px 0;
 }
 
 #temperatura {
-    font-size: 2.5rem;
+    font-size: 5rem;
     font-weight: bold;
 }
 
-/* Estilos del pie de página */
+#descripcion {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.detalles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+    text-align: left;
+}
+
+.detalles p {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.15rem;
+}
+
+/* Recomendacion */
+.recomendacion {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.recomendacion.bueno {
+    background: rgba(76, 175, 80, 0.3);
+    border: 2px solid #4CAF50;
+}
+
+.recomendacion.cuidado {
+    background: rgba(255, 193, 7, 0.3);
+    border: 2px solid #FFC107;
+    color: #333;
+}
+
+.recomendacion.peligro {
+    background: rgba(244, 67, 54, 0.3);
+    border: 2px solid #f44336;
+}
+
+/* Pronostico - RETO 2 */
+.pronostico {
+    margin-top: 30px;
+    display: none;
+}
+
+.pronostico h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.pronostico-dias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.dia {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.dia-fecha {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.dia-temp {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+/* Pie de pagina */
 footer {
     margin-top: 40px;
-    font-size: 0.85rem;
+    font-size: 1rem;
     opacity: 0.6;
 }
 
-/* Adaptación para pantallas pequeñas */
-@media (max-width: 500px) {
-    .entrada {
-        width: 100%;
-    }
-    .boton {
-        margin-left: 0;
-        width: 100%;
-    }
+/* Responsividad */
+@media (max-width: 600px) {
+    .entrada { width: 100%; }
+    .boton { width: 100%; margin-left: 0; }
+    .detalles, .pronostico-dias { grid-template-columns: 1fr; }
+    #temperatura { font-size: 4rem; }
 }
