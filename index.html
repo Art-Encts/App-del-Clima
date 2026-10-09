@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App del Clima</title>
+    <title>App del Clima - Parte 9</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -13,27 +13,49 @@
         <img src="img/banner.png" alt="Banner de la App del Clima" class="banner">
         <h1>App del Clima</h1>
         <p>Consulta el clima en tiempo real de cualquier ciudad</p>
+        <button type="button" id="botonTema" class="boton boton-tema">Cambiar Tema</button>
     </header>
 
     <main>
         <form id="formu" class="formulario">
             <input type="text" id="caja" placeholder="Escribe una ciudad..." class="entrada">
             <button type="submit" class="boton">Consultar</button>
+            <button type="button" id="botonLimpiar" class="boton boton-secundario">Limpiar</button>
+            <button type="button" id="botonUbicacion" class="boton boton-ubicacion">Mi Ubicacion</button>
         </form>
+
+        <div id="historial" class="historial"></div>
 
         <p id="texto" class="mensaje"></p>
 
         <div id="cajaResultado" class="resultado">
             <h2 id="nombreCiudad"></h2>
-            <p id="temperatura"></p>
-            <p id="descripcion"></p}
-            <p id="sensacion"></p>
-            <p id="humedad"></p>
+            
+            <div class="temperatura-grande">
+                <p id="temperatura"></p>
+                <p id="descripcion"></p>
+            </div>
+
+            <div class="detalles">
+                <p>Sensacion: <span id="sensacion"></span></p>
+                <p>Humedad: <span id="humedad"></span></p>
+                <p>Presion: <span id="presion"></span></p>
+                <p>Viento: <span id="viento"></span></p>
+                <p>Amanecer: <span id="amanecer"></span></p>
+                <p>Atardecer: <span id="atardecer"></span></p>
+            </div>
+
+            <div id="recomendacion" class="recomendacion"></div>
+
+            <button type="button" id="botonCompartir" class="boton boton-compartir">Compartir en WhatsApp</button>
         </div>
+
+        <div id="pronostico" class="pronostico"></div>
     </main>
 
     <footer>
         <p>&copy; 2026 - App del Clima | Datos de OpenWeatherMap</p>
+        <p>Parte 9 - Todos los retos completados</p>
     </footer>
 </div>
 
